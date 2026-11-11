@@ -1,0 +1,280 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-poppins: "Poppins", sans-serif;
+  --font-playfair: "Playfair Display", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Custom Thin HarEvent Gradient Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff5f8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #D4145A 0%, #FF7628 100%);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #d0004b 0%, #e66a00 100%);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #D4145A #fff5f8;
+}
+
+.signup-mode-toggle__fill {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  border-radius: inherit;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: signup-toggle-fill 2.8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.signup-mode-toggle--customer .signup-mode-toggle__fill {
+  background: linear-gradient(90deg, rgb(212 20 90 / 18%), rgb(255 118 40 / 22%));
+}
+
+.signup-mode-toggle--vendor .signup-mode-toggle__fill {
+  background: linear-gradient(90deg, rgb(45 106 79 / 16%), rgb(82 183 136 / 24%));
+}
+
+@keyframes signup-toggle-fill {
+  0%, 12% {
+    transform: scaleX(0);
+  }
+  58%, 78% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .signup-mode-toggle__fill {
+    animation: none;
+    transform: scaleX(0);
+  }
+}
+
+
+.dropdown-menu {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.dropdown-menu::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.dropdown-menu button {
+  border: none;
+  box-shadow: none;
+}
+
+.dropdown-menu button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* ---------------------------------------------------------------------------
+   Shared brand motion helpers
+   Kept in one place so every section uses the same curve and rhythm.
+--------------------------------------------------------------------------- */
+
+::selection {
+  background: rgba(212,20,90, 0.16);
+  color: #24151b;
+}
+
+/* Slow floating accent for decorative badges/icons */
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float-soft {
+  animation: float-soft 5.5s ease-in-out infinite;
+}
+
+/* Underline that draws in from the left on hover/focus */
+.draw-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 0% 1.5px;
+  transition: background-size 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.draw-underline:hover,
+.draw-underline:focus-visible {
+  background-size: 100% 1.5px;
+}
+
+/* ---------------------------------------------------------------------------
+   Press feedback (site-wide)
+   Every clickable control dips inward while held, so a click feels physical.
+   Built on the standalone `scale` / `translate` properties on purpose: motion
+   writes an inline `transform`, which a stylesheet `transform` rule could never
+   beat, while these separate properties simply compose with it. `transform` is
+   deliberately kept out of the transitioned list so CSS never fights a motion
+   animation frame-by-frame.
+   Opt a control out with `press-off` when motion already animates its tap.
+--------------------------------------------------------------------------- */
+
+/* Defaults and easing live in the base layer, so any Tailwind `transition-*`
+   / `hover:scale-*` utility on the element still wins where it is declared.
+   Anchors are matched by shape (`rounded-*` pills, `inline-flex` CTAs) because
+   a link styled as a button deserves the same feedback as a real `<button>`. */
+@layer base {
+  button:not(.press-off),
+  [role="button"]:not(.press-off),
+  input[type="submit"]:not(.press-off),
+  input[type="button"]:not(.press-off),
+  a[class*="rounded-full"]:not(.press-off),
+  a[class*="inline-flex"]:not(.press-off) {
+    transition-property: scale, translate, color, background-color,
+      border-color, opacity, box-shadow, filter;
+    transition-duration: 180ms;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+/* Unlayered on purpose: the pressed state has to outrank hover utilities. */
+button:not(.press-off):active,
+[role="button"]:not(.press-off):active,
+input[type="submit"]:not(.press-off):active,
+input[type="button"]:not(.press-off):active,
+a[class*="rounded-full"]:not(.press-off):active,
+a[class*="inline-flex"]:not(.press-off):active {
+  scale: 0.965;
+  translate: 0 1px;
+}
+
+button[disabled]:active,
+button[disabled],
+[role="button"][aria-disabled="true"]:active,
+[role="button"][aria-disabled="true"] {
+  scale: 1;
+  translate: 0 0;
+}
+
+/* Light that sweeps across a filled button on hover / keyboard focus */
+.btn-sheen {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.btn-sheen > * {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-sheen::after {
+  content: "";
+  position: absolute;
+  top: -60%;
+  left: -70%;
+  width: 45%;
+  height: 220%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.55),
+    transparent
+  );
+  transform: translateX(-100%) rotate(14deg);
+}
+
+.btn-sheen:hover::after,
+.btn-sheen:focus-visible::after {
+  animation: btn-sheen-sweep 0.85s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes btn-sheen-sweep {
+  from {
+    opacity: 0.9;
+    transform: translateX(-100%) rotate(14deg);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(360%) rotate(14deg);
+  }
+}
+
+/* Small lift on hover, sinks back on press */
+.btn-lift:hover {
+  translate: 0 -2px;
+}
+
+.btn-lift:active {
+  translate: 0 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-float-soft {
+    animation: none;
+  }
+
+  .draw-underline {
+    transition: none;
+  }
+
+  button:not(.press-off),
+  [role="button"]:not(.press-off),
+  input[type="submit"]:not(.press-off),
+  input[type="button"]:not(.press-off),
+  a[class*="rounded-full"]:not(.press-off),
+  a[class*="inline-flex"]:not(.press-off) {
+    transition: none;
+    translate: 0 0;
+    scale: 1;
+  }
+
+  .btn-sheen::after {
+    display: none;
+  }
+
+  .btn-lift:hover,
+  .btn-lift:active {
+    translate: 0 0;
+  }
+}

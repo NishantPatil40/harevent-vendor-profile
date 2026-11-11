@@ -1,0 +1,1579 @@
+/* =========================================================
+   PAGE
+========================================================= */
+
+.crystal-page {
+  min-height: 100vh;
+  background: #fff;
+  color: #2a0f14;
+  font-family: Poppins, sans-serif;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.crystal-wrap {
+  width: min(1440px, calc(100% - 80px));
+  margin: 0 auto;
+  padding-bottom: 60px;
+}
+
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.crystal-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 25px 5px 14px;
+
+  color: #8a7580;
+
+  font-size: 13px;
+
+  flex-wrap: wrap;
+}
+
+.crystal-breadcrumb a {
+  color: #d4145a;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.crystal-breadcrumb a:hover {
+  color: #ff7628;
+}
+
+.crystal-breadcrumb svg {
+  width: 14px;
+  height: 14px;
+  color: #b6a6ad;
+}
+
+
+/* =========================================================
+   TOP PROFILE
+========================================================= */
+
+.vendor-profile-intro {
+  display: grid;
+
+  grid-template-columns:
+    410px
+    minmax(0, 1fr);
+
+  gap: 30px;
+
+  align-items: start;
+
+  margin-bottom: 32px;
+}
+
+
+/* =========================================================
+   SAME HOMEPAGE CARD
+========================================================= */
+
+.vendor-profile-card-wrap {
+  width: 410px;
+  max-width: 100%;
+}
+
+
+/*
+   The homepage VendorCard is a motion article.
+   Keep its original proportions.
+*/
+
+.vendor-profile-card-wrap > article {
+  width: 100% !important;
+  min-height: 0 !important;
+}
+
+
+/*
+   Homepage image height.
+*/
+
+.vendor-profile-card-wrap
+  .vendor-card-image {
+  height: 206px !important;
+}
+
+
+/*
+   Keep the same homepage popping effect.
+*/
+
+.vendor-profile-card-wrap
+  > article:hover {
+  transform: translateY(-8px);
+}
+
+
+/* =========================================================
+   PROFILE INFORMATION CARD
+========================================================= */
+
+.vendor-profile-overview {
+  min-height: 390px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 30px 34px;
+
+  background: #fff;
+
+  border: 1px solid #f1dde5;
+
+  border-top: 3px solid #d4145a;
+
+  border-radius: 17px;
+
+  box-shadow:
+    0 10px 30px
+    rgba(71, 34, 52, 0.07);
+}
+
+.vendor-profile-overview::after {
+  content: "";
+
+  position: absolute;
+
+  top: -3px;
+  right: -1px;
+
+  width: 52%;
+  height: 3px;
+
+  background: #ff7628;
+}
+
+
+/* =========================================================
+   KICKER
+========================================================= */
+
+.vendor-profile-kicker {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 14px;
+
+  color: #d4145a;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.vendor-profile-line {
+  display: inline-block;
+
+  width: 27px;
+  height: 2px;
+
+  background: #d4145a;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.vendor-profile-title-row {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.vendor-profile-title-row h1 {
+  margin: 0;
+
+  color: #2a0f14;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size: 35px;
+
+  line-height: 1.15;
+
+  font-weight: 700;
+}
+
+.vendor-profile-title-row p {
+  margin: 8px 0 0;
+
+  color: #8a7580;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   VERIFIED
+========================================================= */
+
+.crystal-verified {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  flex-shrink: 0;
+
+  padding: 6px 10px;
+
+  background: #ecfaf2;
+
+  color: #16844b;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.vendor-profile-description {
+  margin: 28px 0 25px;
+
+  max-width: 780px;
+
+  color: #806d76;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.vendor-profile-stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  border-top: 1px solid #f0dfe5;
+
+  border-bottom: 1px solid #f0dfe5;
+
+  padding: 18px 0;
+
+  margin-top: 10px;
+}
+
+.vendor-profile-stats div {
+  padding-right: 20px;
+
+  margin-right: 20px;
+
+  border-right: 1px solid #f0dfe5;
+}
+
+.vendor-profile-stats
+  div:last-child {
+  border-right: 0;
+}
+
+.vendor-profile-stats span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #8b7780;
+
+  font-size: 11px;
+}
+
+.vendor-profile-stats b {
+  display: block;
+
+  color: #2e2230;
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.vendor-profile-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 21px;
+}
+
+.vendor-profile-primary,
+.vendor-profile-secondary {
+  height: 48px;
+
+  padding: 0 22px;
+
+  border-radius: 999px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  font-family: Poppins;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+.vendor-profile-primary {
+  color: #fff;
+
+  border: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      #d4145a,
+      #ff7628
+    );
+
+  box-shadow:
+    0 8px 20px
+    rgba(212, 20, 90, 0.2);
+}
+
+.vendor-profile-primary:hover {
+  transform: translateY(-3px);
+
+  filter: brightness(1.04);
+
+  box-shadow:
+    0 13px 28px
+    rgba(212, 20, 90, 0.28);
+}
+
+.vendor-profile-secondary {
+  color: #3a2b33;
+
+  background: #fff4e4;
+
+  border: 1px solid #f3dfc8;
+}
+
+.vendor-profile-secondary:hover {
+  transform: translateY(-3px);
+
+  border-color: #e5c48f;
+
+  box-shadow:
+    0 8px 18px
+    rgba(71, 34, 52, 0.08);
+}
+
+
+/* =========================================================
+   SMALL ACTIONS
+========================================================= */
+
+.vendor-profile-meta {
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  margin-top: 18px;
+}
+
+.vendor-profile-meta span {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: #d4145a;
+}
+
+.vendor-profile-meta button {
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #7d6972;
+
+  font-family: Poppins;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.vendor-profile-meta button:hover {
+  color: #d4145a;
+}
+
+
+/* =========================================================
+   LOWER PROFILE
+========================================================= */
+
+.crystal-columns {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    370px;
+
+  gap: 30px;
+
+  align-items: start;
+}
+
+.crystal-left {
+  min-width: 0;
+}
+
+.crystal-right {
+  min-width: 0;
+}
+
+
+/* =========================================================
+   FEATURE IMAGE
+========================================================= */
+
+.crystal-main-photo {
+  position: relative;
+
+  height: 460px;
+
+  overflow: hidden;
+
+  margin-bottom: 25px;
+
+  border-radius: 16px;
+
+  background: #fff;
+
+  box-shadow:
+    0 8px 28px
+    rgba(71, 34, 52, 0.08);
+}
+
+.crystal-main-photo img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.8s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+.crystal-main-photo:hover img {
+  transform: scale(1.035);
+}
+
+
+/* =========================================================
+   FEATURED LABEL
+========================================================= */
+
+.crystal-featured {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  padding: 10px 17px;
+
+  color: #fff;
+
+  background:
+    linear-gradient(
+      90deg,
+      #d4145a,
+      #ff7628
+    );
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   DETAILS CARD
+========================================================= */
+
+.crystal-details-card {
+  background: #fff;
+
+  border: 1px solid #f1dde5;
+
+  border-radius: 15px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 5px 20px
+    rgba(71, 34, 52, 0.05);
+}
+
+
+/* =========================================================
+   TABS
+========================================================= */
+
+.crystal-tabs {
+  min-height: 58px;
+
+  display: flex;
+
+  align-items: stretch;
+
+  gap: 32px;
+
+  padding: 0 22px;
+
+  border-bottom: 1px solid #f0e2e7;
+}
+
+.crystal-tabs button {
+  position: relative;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #806d76;
+
+  font-family: Poppins;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.crystal-tabs button.active {
+  color: #d4145a;
+}
+
+.crystal-tabs button.active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: 0;
+
+  height: 3px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #d4145a,
+      #ff7628
+    );
+}
+
+
+/* =========================================================
+   TAB CONTENT
+========================================================= */
+
+.crystal-tab-content {
+  padding: 28px;
+
+  color: #6f5e66;
+
+  font-size: 14px;
+
+  line-height: 1.75;
+}
+
+.crystal-tab-content h2 {
+  margin: 0 0 14px;
+
+  color: #2a0f14;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size: 24px;
+}
+
+.crystal-tab-content h3 {
+  margin: 22px 0 8px;
+
+  color: #2a0f14;
+
+  font-size: 15px;
+}
+
+.crystal-tab-content p {
+  margin: 0 0 10px;
+}
+
+.crystal-tab-content ol {
+  margin: 12px 0;
+  padding-left: 20px;
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.crystal-services {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 14px;
+}
+
+.crystal-services > div {
+  padding: 18px;
+
+  border: 1px solid #f1dde5;
+
+  border-radius: 13px;
+
+  background: #fff;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.crystal-services > div:hover {
+  transform: translateY(-5px);
+
+  border-color: #e7a3bb;
+
+  box-shadow:
+    0 15px 28px
+    rgba(71, 34, 52, 0.09);
+}
+
+.crystal-services span {
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+
+  place-items: center;
+
+  margin-bottom: 9px;
+
+  border-radius: 11px;
+
+  color: #d4145a;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff0f5,
+      #fff4e4
+    );
+}
+
+.crystal-services span svg {
+  width: 20px;
+}
+
+.crystal-services b {
+  color: #2a0f14;
+
+  font-size: 13px;
+}
+
+.crystal-services p {
+  color: #8a7580;
+
+  font-size: 11px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   REVIEWS
+========================================================= */
+
+.crystal-review-score {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 17px;
+
+  margin-bottom: 18px;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff6f8,
+      #fff8f1
+    );
+}
+
+.crystal-review-score strong {
+  color: #2a0f14;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size: 37px;
+}
+
+.crystal-review-score span {
+  color: #efa323;
+
+  font-size: 15px;
+}
+
+.crystal-review-score small {
+  color: #8a7580;
+
+  font-size: 11px;
+}
+
+.crystal-review {
+  padding: 16px 0;
+
+  border-bottom: 1px solid #f0e2e7;
+}
+
+.crystal-review b {
+  display: block;
+
+  color: #2a0f14;
+
+  font-size: 13px;
+}
+
+.crystal-review span {
+  color: #efa323;
+
+  font-size: 11px;
+}
+
+.crystal-review p {
+  color: #806d76;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+.crystal-review small {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  color: #16844b;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.crystal-gallery {
+  margin-top: 25px;
+
+  padding: 22px;
+
+  background: #fff;
+
+  border: 1px solid #f1dde5;
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 5px 20px
+    rgba(71, 34, 52, 0.04);
+}
+
+.crystal-gallery h2 {
+  margin: 0 0 16px;
+
+  color: #2a0f14;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size: 23px;
+}
+
+.crystal-gallery > div {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 10px;
+}
+
+.crystal-gallery button {
+  height: 115px;
+
+  padding: 0;
+
+  border: 0;
+
+  overflow: hidden;
+
+  border-radius: 9px;
+
+  background: #fff0f5;
+
+  cursor: pointer;
+}
+
+.crystal-gallery img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.4s ease;
+}
+
+.crystal-gallery button:hover img {
+  transform: scale(1.07);
+}
+
+
+/* =========================================================
+   QUOTE FORM
+========================================================= */
+
+.crystal-quote-sticky {
+  position: sticky;
+
+  top: 20px;
+}
+
+.crystal-quote-form {
+  padding: 18px;
+
+  overflow: hidden;
+
+  background: #fff;
+
+  border: 1px solid #f1dde5;
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 10px 30px
+    rgba(71, 34, 52, 0.07);
+}
+
+.crystal-quote-form h3 {
+  margin: -18px -18px 13px;
+
+  padding: 15px;
+
+  color: #fff;
+
+  text-align: center;
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+  background:
+    linear-gradient(
+      90deg,
+      #d4145a,
+      #ff7628
+    );
+}
+
+.crystal-quote-vendor {
+  margin: 0 0 14px;
+
+  color: #8a7580;
+
+  font-size: 11px;
+}
+
+.crystal-quote-vendor b {
+  color: #2a0f14;
+}
+
+
+/* =========================================================
+   FORM FIELDS
+========================================================= */
+
+.crystal-form-fields {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 10px;
+}
+
+.crystal-quote-form label {
+  display: block;
+
+  color: #382832;
+
+  font-size: 11px;
+
+  font-weight: 500;
+}
+
+.crystal-quote-form label > input,
+.crystal-quote-form label > select,
+.crystal-quote-form label > textarea,
+.crystal-input-icon {
+  width: 100%;
+
+  margin-top: 5px;
+
+  border: 1px solid #e4d9de;
+
+  border-radius: 8px;
+
+  background: #fff;
+
+  font-family: Poppins;
+
+  font-size: 11px;
+
+  outline: none;
+}
+
+.crystal-quote-form label > input,
+.crystal-quote-form label > select {
+  height: 42px;
+
+  padding: 0 10px;
+}
+
+.crystal-input-icon {
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 0 10px;
+}
+
+.crystal-input-icon svg {
+  color: #d4145a;
+
+  flex-shrink: 0;
+}
+
+.crystal-input-icon input {
+  width: 100%;
+  height: 100%;
+
+  border: 0 !important;
+
+  outline: 0;
+
+  font-family: Poppins;
+
+  font-size: 11px;
+}
+
+.crystal-quote-form textarea {
+  min-height: 75px;
+
+  padding: 8px 10px;
+
+  resize: vertical;
+}
+
+.crystal-quote-form input:focus,
+.crystal-quote-form select:focus,
+.crystal-quote-form textarea:focus {
+  border-color: #d4145a;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(212, 20, 90, 0.07);
+}
+
+.crystal-quote-form label small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #d00000;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   RADIO
+========================================================= */
+
+.crystal-quote-form fieldset {
+  margin: 13px 0;
+
+  padding: 0;
+
+  border: 0;
+}
+
+.crystal-quote-form legend {
+  margin-bottom: 7px;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+.crystal-radio-row {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.crystal-radio-row label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  color: #8a7580;
+}
+
+.crystal-radio-row input {
+  width: 14px;
+  height: 14px;
+
+  accent-color: #d4145a;
+}
+
+
+/* =========================================================
+   FORM BUTTON
+========================================================= */
+
+.crystal-red-button {
+  min-width: 125px;
+  height: 42px;
+
+  margin-top: 12px;
+
+  padding: 0 18px;
+
+  border: 0;
+
+  border-radius: 999px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  color: #fff;
+
+  background:
+    linear-gradient(
+      90deg,
+      #d4145a,
+      #ff7628
+    );
+
+  font-family: Poppins;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.crystal-red-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 22px
+    rgba(212, 20, 90, 0.22);
+}
+
+.crystal-form-safe {
+  margin: 8px 0 0;
+
+  color: #9a8b91;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   ASSIST
+========================================================= */
+
+.crystal-assist {
+  margin-top: 15px;
+
+  padding: 19px;
+
+  border: 1px solid #f1dde5;
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff8f4,
+      #fff
+    );
+}
+
+.crystal-assist h3 {
+  margin: 0 0 7px;
+
+  color: #2a0f14;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size: 18px;
+}
+
+.crystal-assist p {
+  color: #8a7580;
+
+  font-size: 11px;
+
+  line-height: 1.6;
+}
+
+.crystal-assist a {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  color: #d4145a;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   LIGHTBOX
+========================================================= */
+
+.crystal-lightbox {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: grid;
+
+  place-items: center;
+
+  padding: 30px;
+
+  background:
+    rgba(25, 10, 15, 0.88);
+}
+
+.crystal-lightbox img {
+  max-width: 95vw;
+  max-height: 88vh;
+
+  object-fit: contain;
+
+  border-radius: 10px;
+}
+
+.crystal-lightbox button {
+  position: absolute;
+
+  top: 20px;
+  right: 25px;
+
+  width: 40px;
+  height: 40px;
+
+  display: grid;
+
+  place-items: center;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: #fff;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   NOTICE
+========================================================= */
+
+.crystal-notice {
+  position: fixed;
+
+  z-index: 10000;
+
+  left: 50%;
+  bottom: 25px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  max-width: calc(100% - 30px);
+
+  padding: 12px 16px;
+
+  border-radius: 10px;
+
+  color: #fff;
+
+  background: #2a0f14;
+
+  font-size: 11px;
+
+  box-shadow:
+    0 10px 30px
+    rgba(0, 0, 0, 0.2);
+}
+
+.crystal-notice button {
+  border: 0;
+
+  background: transparent;
+
+  color: #fff;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .crystal-wrap {
+    width: min(
+      calc(100% - 40px),
+      1440px
+    );
+  }
+
+  .vendor-profile-intro {
+    grid-template-columns:
+      370px
+      minmax(0, 1fr);
+
+    gap: 20px;
+  }
+
+  .vendor-profile-card-wrap {
+    width: 370px;
+  }
+
+  .vendor-profile-card-wrap
+    .vendor-card-image {
+    height: 190px !important;
+  }
+
+  .vendor-profile-overview {
+    padding: 25px;
+  }
+
+  .vendor-profile-title-row h1 {
+    font-size: 29px;
+  }
+
+  .crystal-columns {
+    grid-template-columns:
+      minmax(0, 1fr)
+      330px;
+  }
+}
+
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .vendor-profile-intro {
+    grid-template-columns: 1fr;
+  }
+
+  .vendor-profile-card-wrap {
+    width: 410px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .vendor-profile-overview {
+    width: 100%;
+  }
+
+  .crystal-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .crystal-right {
+    width: 100%;
+  }
+
+  .crystal-quote-sticky {
+    position: static;
+  }
+
+  .crystal-main-photo {
+    height: 400px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .crystal-wrap {
+    width: calc(100% - 24px);
+  }
+
+  .crystal-breadcrumb {
+    padding-top: 18px;
+    font-size: 11px;
+  }
+
+  .vendor-profile-card-wrap {
+    width: 100%;
+  }
+
+  .vendor-profile-card-wrap
+    .vendor-card-image {
+    height: 200px !important;
+  }
+
+  .vendor-profile-overview {
+    padding: 21px;
+    min-height: auto;
+  }
+
+  .vendor-profile-title-row {
+    display: block;
+  }
+
+  .vendor-profile-title-row h1 {
+    font-size: 27px;
+  }
+
+  .crystal-verified {
+    margin-top: 12px;
+  }
+
+  .vendor-profile-description {
+    font-size: 13px;
+    margin-top: 20px;
+  }
+
+  .vendor-profile-stats {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .vendor-profile-stats div {
+    border-right: 0;
+    margin: 0 0 15px;
+    padding-right: 5px;
+  }
+
+  .vendor-profile-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .vendor-profile-primary,
+  .vendor-profile-secondary {
+    width: 100%;
+  }
+
+  .vendor-profile-meta {
+    justify-content: center;
+  }
+
+  .crystal-main-photo {
+    height: 280px;
+  }
+
+  .crystal-tabs {
+    gap: 18px;
+    padding: 0 15px;
+  }
+
+  .crystal-tabs button {
+    font-size: 11px;
+  }
+
+  .crystal-tab-content {
+    padding: 20px;
+    font-size: 12px;
+  }
+
+  .crystal-services {
+    grid-template-columns: 1fr;
+  }
+
+  .crystal-gallery > div {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .crystal-gallery button {
+    height: 105px;
+  }
+
+  .crystal-form-fields {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .vendor-profile-title-row h1 {
+    font-size: 23px;
+  }
+
+  .vendor-profile-card-wrap
+    .vendor-card-image {
+    height: 185px !important;
+  }
+
+  .crystal-main-photo {
+    height: 230px;
+  }
+
+  .vendor-profile-meta {
+    gap: 15px;
+  }
+}
