@@ -1,6 +1,21 @@
+// ==========================================================
+// HAREVENT VENDOR DATA
+// ==========================================================
+// All images are loaded from the public/ folder.
+// Do NOT add "public/" in the image path.
+// Example:
+// public/Golden Mandap Wedding Ceremony.png
+// becomes:
+// /Golden Mandap Wedding Ceremony.png
+// ==========================================================
+
 export const vendors = [
+  // ========================================================
+  // 1. ROYAL MOMENTS PHOTOGRAPHY
+  // ========================================================
   {
     id: "royal-moments",
+
     category: "Wedding Photography",
     filterCategory: "Photography",
 
@@ -16,13 +31,11 @@ export const vendors = [
     priceNote: "onwards",
     startingPrice: "₹85,000 Onwards",
 
-    /*
-      Images are already inside public/.
-      Therefore we use /filename directly.
-    */
+    // Main image
     portfolioImage: "/Joyful Indian Wedding Petal Shower.png",
 
-    imageAlt: "Wedding couple celebrating with flower petals",
+    imageAlt:
+      "Royal Moments Photography wedding couple celebrating with flower petals",
 
     primaryMarket: "Pune",
 
@@ -39,16 +52,21 @@ export const vendors = [
     about:
       "Royal Moments Photography creates cinematic wedding stories with a focus on candid emotions, natural portraits and beautifully timed celebrations. The team works across Pune and nearby destinations.",
 
+    // Photography-specific gallery
     gallery: [
       "/Joyful Indian Wedding Petal Shower.png",
       "/Golden-Hour Garden Wedding Ceremony.png",
       "/Golden Mandap Wedding Ceremony.png",
-      "/Rohan and Eisha’s Floral Engagement.png",
+      "/Golden-Hour Pre-Wedding Celebration.png",
     ],
   },
 
+  // ========================================================
+  // 2. MAYUR MANDAP & FLORAL
+  // ========================================================
   {
     id: "mayur-mandap-floral",
+
     category: "Wedding Decor",
     filterCategory: "Decor",
 
@@ -56,7 +74,7 @@ export const vendors = [
     fullName: "Mayur Mandap & Floral",
 
     description:
-      "Elegant mandap designs, floral installations and contemporary decor.",
+      "Elegant mandap designs, floral installations and contemporary wedding decor.",
 
     location: "Pune & Mumbai",
 
@@ -64,9 +82,11 @@ export const vendors = [
     priceNote: "onwards",
     startingPrice: "₹1.2 Lakh Onwards",
 
+    // Decor-specific main image
     portfolioImage: "/Waterfront Romance Under a Floral Canopy.png",
 
-    imageAlt: "Wedding decor with a floral canopy",
+    imageAlt:
+      "Mayur Mandap and Floral elegant wedding decoration",
 
     primaryMarket: "Pune & Mumbai",
 
@@ -83,6 +103,7 @@ export const vendors = [
     about:
       "Mayur Mandap & Floral designs elegant wedding environments with custom mandaps, floral installations and contemporary styling. Packages can be tailored to the venue, theme and celebration size.",
 
+    // Decor-related images only
     gallery: [
       "/Waterfront Romance Under a Floral Canopy.png",
       "/Lavish Red and Gold Wedding Stage.png",
@@ -91,8 +112,12 @@ export const vendors = [
     ],
   },
 
+  // ========================================================
+  // 3. IMPERIAL PALACE & BANQUETS
+  // ========================================================
   {
     id: "imperial-palace-banquets",
+
     category: "Luxury Venue",
     filterCategory: "Venues",
 
@@ -108,9 +133,11 @@ export const vendors = [
     priceNote: "per event",
     startingPrice: "₹3.5 Lakh Per Event",
 
+    // Venue-specific main image
     portfolioImage: "/Opulent Indian Garden Wedding Mandap.png",
 
-    imageAlt: "Luxury garden wedding venue with a mandap",
+    imageAlt:
+      "Imperial Palace luxury wedding venue and banquet decoration",
 
     primaryMarket: "Kharadi, Pune",
 
@@ -127,6 +154,7 @@ export const vendors = [
     about:
       "Imperial Palace & Banquets offers spacious celebration areas for weddings, receptions and family functions in Kharadi, Pune. The venue combines a grand setting with flexible event arrangements.",
 
+    // Venue-related images only
     gallery: [
       "/Opulent Indian Garden Wedding Mandap.png",
       "/Golden Mandap Wedding Ceremony.png",
@@ -135,8 +163,12 @@ export const vendors = [
     ],
   },
 
+  // ========================================================
+  // 4. SAFFRON & SPICE GOURMET
+  // ========================================================
   {
     id: "saffron-spice-gourmet",
+
     category: "Catering",
     filterCategory: "Catering",
 
@@ -152,9 +184,11 @@ export const vendors = [
     priceNote: "per plate",
     startingPrice: "₹950 Per Plate",
 
+    // Catering-specific main image
     portfolioImage: "/Lavish Indian Fusion Wedding Buffet.png",
 
-    imageAlt: "Indian fusion wedding buffet with multiple dishes",
+    imageAlt:
+      "Saffron and Spice Gourmet Indian wedding buffet",
 
     primaryMarket: "Pune",
 
@@ -171,6 +205,7 @@ export const vendors = [
     about:
       "Saffron & Spice Gourmet brings multi-cuisine catering to weddings and celebrations in Pune, with regional specialities, live counters and flexible menu planning for different guest groups.",
 
+    // Catering-related images only
     gallery: [
       "/Lavish Indian Fusion Wedding Buffet.png",
       "/Golden Wedding Buffet Under Crystal Lights.png",
@@ -180,5 +215,10 @@ export const vendors = [
   },
 ];
 
-export const getVendorById = (id) =>
-  vendors.find((vendor) => vendor.id === id);
+// ==========================================================
+// FIND VENDOR BY ID
+// ==========================================================
+
+export const getVendorById = (id) => {
+  return vendors.find((vendor) => vendor.id === id);
+};
