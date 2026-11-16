@@ -635,7 +635,7 @@
   color: #66545b;
 
   font:
-    600 11px
+    600 14px
     "Poppins",
     sans-serif;
 
@@ -707,7 +707,7 @@
 .he-section-card p {
   color: #76656c;
 
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.8;
 }
 
@@ -928,7 +928,7 @@
 
   color: #302126;
 
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .he-amenity-grid {
@@ -1693,7 +1693,7 @@
 
   color: #322127;
 
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .he-sidebar-card-header button,
@@ -1792,7 +1792,7 @@
 
   color: #78666d;
 
-  font-size: 9px;
+  font-size: 16px;
 }
 
 .he-location-details svg {
@@ -2527,4 +2527,103 @@
   .he-notice {
     border-radius: 12px;
   }
+} 
+/* =========================================================
+   DESCRIPTION FONT SIZE - HOMEPAGE STYLE
+========================================================= */
+
+.he-section-card p,
+.he-about-grid p,
+.he-service-card p,
+.he-package-card p,
+.he-review-card p,
+.he-contact-card p,
+.he-not-found p {
+  font-size: 14px;
+}
+/* =========================================================
+   GET FREE QUOTE - FONT SIZE 14px
+========================================================= */
+
+/* =========================================================
+   PRICING, AMENITIES & PORTFOLIO - FONT SIZE 14px
+========================================================= */
+
+.he-price-row,
+.he-price-row strong,
+.he-amenity-grid button,
+.he-section-heading p {
+  font-size: 14px;
+}
+/* =========================================================
+   LOCATION - FONT SIZE 14px
+========================================================= */
+
+.he-location-details div {
+  font-size: 14px;
+}
+/* Section headings - 16px */
+
+/* Match section headings with Pricing heading */
+
+.he-amenities h3,
+.he-sidebar-card-header h3 {
+  font-size: 22px;
+  color: #2a0f14;
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+}
+/* Align Amenities heading with Pricing heading */
+
+.he-pricing-layout {
+  align-items: start;
+}
+
+.he-amenities {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.he-amenities h3 {
+  margin-top: 0;
+}
+/* Align Amenities heading with Pricing heading */
+
+.he-amenities {
+  transform: translateY(-42px);
+}
+/* =========================================================
+   GET FREE QUOTE - IMPROVED FONT SIZES
+========================================================= */
+
+/* Main heading */
+.he-quote-header h3 {
+  font-size: 24px;
+}
+
+/* Subtitle */
+.he-quote-header p {
+  font-size: 14px;
+}
+
+/* Form labels */
+.he-quote-body label {
+  font-size: 14px;
+}
+
+/* Input, select and textarea text */
+.he-quote-body input,
+.he-quote-body select,
+.he-quote-body textarea {
+  font-size: 12px;
+}
+
+/* Button */
+.he-main-gradient-button {
+  font-size: 14px;
+}
+
+/* Security message */
+.he-secure-note {
+  font-size: 14px;
 }
