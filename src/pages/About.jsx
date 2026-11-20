@@ -1,626 +1,645 @@
-import React from "react";
+
+import { Link } from "react-router-dom";
 import {
   ArrowRight,
-  ArrowUpRight,
-  Heart,
-  ShieldCheck,
-  Users,
-  Star,
-  Headphones,
-  Search,
+  BadgeCheck,
   CalendarCheck,
-  MapPin,
-  Camera,
-  Utensils,
-  Sparkles,
-  Music,
   CheckCircle2,
-  Quote,
+  ChevronRight,
+  ClipboardList,
+  Compass,
+  Heart,
+  Handshake,
+  MessageCircle,
+  Search,
+  ShieldCheck,
+  Sparkles,
+  Store,
+  Target,
+  Users,
+  Wallet,
 } from "lucide-react";
-import { Link } from "react-router-dom";
+
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import "./About.css";
 
-const About = () => {
+const customerBenefits = [
+  "Explore venues, decorators, caterers, photographers, makeup artists, DJs, planners and more.",
+  "Browse by event or vendor category to find services that match your occasion.",
+  "View vendor services and portfolios, then send an enquiry to request a quote.",
+  "Chat with vendors and ask questions before making your decision.",
+];
+
+const vendorBenefits = [
+  "Create a business profile featuring your services, cities and portfolio.",
+  "Reach customers who are planning events in your area.",
+  "Receive enquiries, send quotes and manage your calendar from one dashboard.",
+  "Add team members, such as staff and an accountant, with limited access.",
+];
+
+const steps = [
+  {
+    number: "01",
+    title: "Discover",
+    text: "Choose your event or the service you need, and select your city.",
+    Icon: Search,
+  },
+  {
+    number: "02",
+    title: "Compare",
+    text: "Explore vendor profiles, services and portfolios to find your match.",
+    Icon: ClipboardList,
+  },
+  {
+    number: "03",
+    title: "Connect",
+    text: "Send an enquiry, discuss your requirements and get a suitable quote.",
+    Icon: MessageCircle,
+  },
+  {
+    number: "04",
+    title: "Celebrate",
+    text: "Confirm your vendor and enjoy a celebration worth remembering.",
+    Icon: Sparkles,
+  },
+];
+
+const values = [
+  {
+    title: "Simplicity",
+    text: "Planning should be easy to start and easy to follow.",
+    Icon: Heart,
+  },
+  {
+    title: "Clarity",
+    text: "Quotes help you understand the services and costs for your event.",
+    Icon: Search,
+  },
+  {
+    title: "Fairness to Vendors",
+    text: "Every vendor deserves a chance to be seen for the quality of their work.",
+    Icon: Handshake,
+  },
+  {
+    title: "Respect for Every Celebration",
+    text: "Every occasion and tradition matters, from a small puja to a grand wedding.",
+    Icon: Users,
+  },
+];
+
+const eventTypes = [
+  "Weddings & Wedding Functions",
+  "Engagements",
+  "Birthdays",
+  "Anniversaries",
+  "Baby Showers & Naming Ceremonies",
+  "Housewarmings",
+  "Corporate Events",
+  "Conferences",
+  "College & School Events",
+  "Festivals",
+  "Religious & Cultural Events",
+  "Concerts & Live Shows",
+];
+
+function About() {
   return (
     <div className="about-page">
+      <Navbar />
 
-      {/* =========================
-          HERO
-      ========================= */}
-      <section className="about-hero">
-        <div className="about-container about-hero-grid">
+      <main className="about-main">
 
-          {/* LEFT */}
-          <div className="about-hero-content">
-
+        {/* HERO SECTION */}
+        <section className="about-hero">
+          <div className="about-hero-copy">
             <div className="about-breadcrumb">
               <Link to="/">Home</Link>
-              <ArrowRight size={15} />
+              <ChevronRight size={13} />
               <span>About Us</span>
             </div>
 
-            <div className="about-eyebrow">
-              <span></span>
-              ABOUT HAREVENT
-            </div>
+            <span className="about-eyebrow">
+              <span /> THE STORY OF HAREVENT
+            </span>
 
             <h1>
-              Everything for
-              <br />
-              <span>Every Event.</span>
+              About <em>HarEvent</em>
             </h1>
 
-            <h2>
-              जहाँ इवेंट, वहाँ HarEvent!
-            </h2>
+            <h2>Everything for Every Event.</h2>
 
-            <p className="about-intro">
+            <p>
               HarEvent is an event vendor marketplace built to make event
-              planning simple. Discover trusted venues, decorators, caterers,
-              photographers, DJs and more — all in one place.
+              planning simple. We bring venues, decorators, caterers,
+              photographers, DJs and many more services together in one
+              place, so you can find the right people for every celebration.
             </p>
 
-            <div className="about-buttons">
-              <Link to="/vendor-categories" className="about-btn primary">
-                Explore Vendors
-                <ArrowRight size={18} />
+            <div className="about-hero-actions">
+              <Link
+                className="about-btn about-btn-primary"
+                to="/event-categories"
+              >
+                Explore Event Categories
+                <ArrowRight size={16} />
               </Link>
 
-              <Link to="/event-categories" className="about-btn secondary">
-                Explore Events
-                <ArrowUpRight size={18} />
+              <Link
+                className="about-btn about-btn-outline"
+                to="/vendor-categories"
+              >
+                Find a Vendor
               </Link>
             </div>
 
-            <div className="about-stats">
-              <div>
-                <strong>500+</strong>
-                <span>Happy Clients</span>
-              </div>
+            <div className="about-trust-row">
+              <span>
+                <ShieldCheck size={17} />
+                One place to discover
+              </span>
 
-              <div>
-                <strong>100+</strong>
-                <span>Events Covered</span>
-              </div>
-
-              <div>
-                <strong>50+</strong>
-                <span>Vendor Categories</span>
-              </div>
+              <span>
+                <Heart size={16} />
+                Every celebration matters
+              </span>
             </div>
           </div>
 
-          {/* RIGHT IMAGE */}
-          <div className="about-hero-image-wrap">
+          <div className="about-hero-visual">
             <img
-              src="/Golden Hour Pre-Wedding Celebration.png"
-              alt="Beautiful wedding celebration"
               className="about-hero-image"
+              src="/hero.png"
+              alt="Beautiful Indian wedding celebration"
             />
 
-            <div className="about-floating-card">
-              <div className="floating-icon">
-                <Heart size={22} fill="white" />
-              </div>
+            <div className="about-hero-stamp">
+              <Heart size={18} fill="currentColor" />
+              <b>
+                Made for moments
+                <br />
+                that matter
+              </b>
+              <small>EVERY EVENT. EVERY VENDOR.</small>
+            </div>
 
-              <div>
-                <h3>Every celebration matters.</h3>
-                <p>
-                  Find the right people to make your event memorable.
-                </p>
-              </div>
+            <div className="about-hero-note">
+              <Sparkles size={18} />
+              <span>
+                Celebrate more.
+                <br />
+                <b>Plan with ease.</b>
+              </span>
             </div>
           </div>
-        </div>
-      </section>
 
+          <div className="about-hero-decoration" aria-hidden="true">
+            ✦
+          </div>
+        </section>
 
-      {/* =========================
-          OUR STORY
-      ========================= */}
-      <section className="about-section story-section">
-        <div className="about-container story-grid">
-
-          <div className="story-image-area">
-            <img
-              src="/Golden Mandap Wedding Ceremony.png"
-              alt="Indian wedding ceremony"
-              className="story-main-image"
-            />
-
-            <div className="story-small-image">
+        {/* WHO WE ARE */}
+        <section className="about-who about-section">
+          <div className="about-photo-collage">
+            <div className="about-photo-main">
               <img
-                src="/Joyful Indian Family Celebration.png"
-                alt="Family celebration"
+                src="/Golden-Hour Garden Wedding Ceremony.png"
+                alt="Wedding ceremony under a floral canopy"
               />
             </div>
 
-            <div className="story-badge">
+            <div className="about-photo-small about-photo-top">
+              <img
+                src="/Golden Meadow Wedding Photoshoot.png"
+                alt="Couple enjoying a wedding photoshoot"
+              />
+            </div>
+
+            <div className="about-photo-small about-photo-bottom">
+              <img
+                src="/Joyful Indian Family Celebration.png"
+                alt="Family celebrating together"
+              />
+            </div>
+
+            <div className="about-photo-caption">
               <Heart size={17} fill="currentColor" />
-              <span>Celebrate Every Moment</span>
+              <span>
+                Bringing people
+                <br />
+                and celebrations together
+              </span>
             </div>
           </div>
 
-          <div className="story-content">
-
-            <div className="about-eyebrow">
-              <span></span>
-              OUR STORY
-            </div>
+          <div className="about-who-copy">
+            <span className="about-eyebrow">WHO WE ARE</span>
 
             <h2>
-              Your one-stop
-              <br />
-              <span>event vendor marketplace</span>
+              Your one-stop event vendor <em>marketplace.</em>
             </h2>
 
             <p>
-              Planning an event often means searching through different
-              contacts, comparing services and making countless calls.
-              HarEvent brings the experience together in one simple place.
+              Planning an event usually means countless calls, scattered
+              contacts and endless comparing. HarEvent was created to change
+              that. We are a marketplace that connects people planning
+              weddings, birthdays, corporate events, engagements, festivals
+              and other special occasions with the vendors who bring those
+              events to life.
             </p>
 
             <p>
-              From weddings and birthdays to corporate events and
-              celebrations, customers can discover vendors, explore their
-              work and connect with the people who can bring their ideas
-              to life.
+              For customers, HarEvent is a place to discover, compare and
+              connect. For event professionals, it is a place to be seen,
+              show their work and meet customers who need them.
             </p>
 
-            <div className="story-cards">
-
-              <div className="mini-card">
-                <div className="mini-card-icon">
-                  <Heart size={20} />
-                </div>
-
-                <h3>Our Vision</h3>
-
-                <p>
-                  To become a trusted destination for event planning in India
-                  by making vendor discovery simple and reliable.
-                </p>
+            <div className="about-audience-grid">
+              <div>
+                <span className="about-mini-icon">
+                  <Users size={19} />
+                </span>
+                <b>For Customers</b>
+                <small>
+                  Discover the right services for your special occasion.
+                </small>
               </div>
 
-              <div className="mini-card">
-                <div className="mini-card-icon">
-                  <Sparkles size={20} />
-                </div>
-
-                <h3>Our Mission</h3>
-
-                <p>
-                  To simplify planning, increase vendor visibility and help
-                  customers find suitable services for every occasion.
-                </p>
+              <div>
+                <span className="about-mini-icon">
+                  <Store size={19} />
+                </span>
+                <b>For Vendors</b>
+                <small>
+                  Showcase your work and connect with new customers.
+                </small>
               </div>
-
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-
-      {/* =========================
-          WHY HAREVENT
-      ========================= */}
-      <section className="why-section">
-        <div className="about-container">
-
-          <div className="section-heading">
-            <div className="about-eyebrow center">
-              <span></span>
-              WHY HAREVENT
-              <span></span>
-            </div>
+        {/* WHY WE EXIST */}
+        <section className="about-why about-section">
+          <div className="about-section-heading">
+            <span className="about-eyebrow">WHY HAREVENT EXISTS</span>
 
             <h2>
-              Plan smarter.
-              <span> Celebrate better.</span>
+              Event planning should feel exciting,{" "}
+              <em>not exhausting.</em>
             </h2>
 
             <p>
-              Everything you need to discover the right event professionals,
-              all brought together in one place.
+              Good events begin with good choices. Finding the right people
+              to make them happen should be just as joyful.
             </p>
           </div>
 
-          <div className="why-grid">
-
-            <div className="why-card">
-              <div className="why-icon">
-                <Search size={23} />
-              </div>
-
-              <h3>Discover Easily</h3>
-
-              <p>
-                Find venues and event professionals by category, service
-                and occasion.
-              </p>
+          <div className="about-why-content">
+            <div className="about-why-image">
+              <img
+                src="/Opulent Indian Garden Wedding Mandap.png"
+                alt="Beautifully decorated event venue"
+              />
             </div>
 
-            <div className="why-card">
-              <div className="why-icon">
-                <ShieldCheck size={23} />
-              </div>
+            <div className="about-why-card">
+              <span className="about-large-icon">
+                <Compass size={25} />
+              </span>
 
-              <h3>Trusted Vendors</h3>
-
-              <p>
-                Explore professional profiles and portfolios before making
-                your decision.
-              </p>
-            </div>
-
-            <div className="why-card">
-              <div className="why-icon">
-                <Star size={23} />
-              </div>
-
-              <h3>Compare & Choose</h3>
+              <h3>Bringing both sides together.</h3>
 
               <p>
-                Compare services, portfolios and available options with
-                greater confidence.
+                Finding reliable vendors, understanding what a service
+                includes and comparing options can be difficult when
+                information is scattered. At the same time, talented vendors
+                need better ways to reach the customers who need them.
               </p>
-            </div>
-
-            <div className="why-card">
-              <div className="why-icon">
-                <Users size={23} />
-              </div>
-
-              <h3>Connect Directly</h3>
 
               <p>
-                Send an enquiry and connect with vendors who understand
-                your event requirements.
+                HarEvent brings both sides together. Customers get clear
+                options and a simple way to ask for quotes. Vendors get a
+                professional profile and a way to reach customers across
+                India.
               </p>
-            </div>
 
-            <div className="why-card">
-              <div className="why-icon">
-                <CalendarCheck size={23} />
+              <div className="about-why-points">
+                <span>
+                  <CheckCircle2 size={15} />
+                  Discover with confidence
+                </span>
+
+                <span>
+                  <CheckCircle2 size={15} />
+                  Connect with ease
+                </span>
               </div>
-
-              <h3>Plan Your Event</h3>
-
-              <p>
-                Keep your event planning journey organized from discovery
-                to final booking.
-              </p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-
-      {/* =========================
-          VALUES + IMAGE
-      ========================= */}
-      <section className="about-section values-section">
-        <div className="about-container values-grid">
-
-          <div className="values-content">
-
-            <div className="about-eyebrow">
-              <span></span>
-              WHAT WE BELIEVE
-            </div>
+        {/* VISION AND MISSION */}
+        <section className="about-purpose about-section">
+          <div className="about-section-heading centered">
+            <span className="about-eyebrow">OUR PURPOSE</span>
 
             <h2>
-              Making event planning
-              <span> simple and meaningful.</span>
+              A clear vision. A meaningful <em>mission.</em>
+            </h2>
+          </div>
+
+          <div className="about-purpose-grid">
+            <article className="about-purpose-card vision-card">
+              <span className="about-purpose-icon">
+                <Target size={24} />
+              </span>
+
+              <span className="about-card-kicker">LOOKING AHEAD</span>
+
+              <h3>Our Vision</h3>
+
+              <p>
+                To become a trusted destination for event planning in India
+                by making it easier for people to find the right vendors
+                for every occasion.
+              </p>
+
+              <div className="about-card-flower">✳</div>
+            </article>
+
+            <article className="about-purpose-card mission-card">
+              <span className="about-purpose-icon">
+                <Compass size={24} />
+              </span>
+
+              <span className="about-card-kicker">WHAT DRIVES US</span>
+
+              <h3>Our Mission</h3>
+
+              <p>
+                To simplify event planning, increase visibility for event
+                vendors, and create a convenient platform where customers
+                can discover suitable services for their events.
+              </p>
+
+              <div className="about-card-flower">✳</div>
+            </article>
+          </div>
+        </section>
+
+        {/* WHAT HAREVENT OFFERS */}
+        <section className="about-offers about-section">
+          <div className="about-section-heading">
+            <span className="about-eyebrow">
+              ONE PLATFORM, TWO COMMUNITIES
+            </span>
+
+            <h2>
+              Find event vendors for <em>every occasion.</em>
             </h2>
 
             <p>
-              Every event is different. Our goal is to make the process of
-              finding the right people easier, clearer and more enjoyable.
+              Whether you're planning a celebration or growing an event
+              business, HarEvent brings useful tools and connections together.
+            </p>
+          </div>
+
+          <div className="about-offer-grid">
+            <article className="about-offer-card">
+              <div className="about-offer-image">
+                <img
+                  src="/Rohan and Eisha’s Floral Engagement.png"
+                  alt="Couple celebrating their engagement"
+                />
+
+                <span>
+                  <Heart size={15} />
+                  FOR CUSTOMERS
+                </span>
+              </div>
+
+              <div className="about-offer-body">
+                <div className="about-offer-title">
+                  <span>
+                    <Search size={20} />
+                  </span>
+                  <h3>Plan your event, your way.</h3>
+                </div>
+
+                <ul>
+                  {customerBenefits.map((item) => (
+                    <li key={item}>
+                      <CheckCircle2 size={16} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+
+                <Link to="/event-categories">
+                  Explore events <ArrowRight size={15} />
+                </Link>
+              </div>
+            </article>
+
+            <article className="about-offer-card">
+              <div className="about-offer-image">
+                <img
+                  src="/Lavish Nighttime Wedding Canopy.png"
+                  alt="Lavish event venue decorated with lights"
+                />
+
+                <span>
+                  <Store size={15} />
+                  FOR VENDORS
+                </span>
+              </div>
+
+              <div className="about-offer-body">
+                <div className="about-offer-title">
+                  <span>
+                    <Store size={20} />
+                  </span>
+                  <h3>Grow your event business.</h3>
+                </div>
+
+                <ul>
+                  {vendorBenefits.map((item) => (
+                    <li key={item}>
+                      <CheckCircle2 size={16} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+
+                <Link to="/join-as-vendor">
+                  Join as a vendor <ArrowRight size={15} />
+                </Link>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        {/* HOW IT WORKS */}
+        <section className="about-how about-section">
+          <div className="about-section-heading centered">
+            <span className="about-eyebrow">
+              A SIMPLE WAY TO GET STARTED
+            </span>
+
+            <h2>
+              From your idea to <em>“I do!”</em>
+            </h2>
+
+            <p>
+              Four simple steps bring you closer to the people who make your
+              event special.
+            </p>
+          </div>
+
+          <div className="about-steps-grid">
+            {steps.map(({ number, title, text, Icon }) => (
+              <article className="about-step" key={number}>
+                <div className="about-step-icon">
+                  <Icon size={23} />
+                  <span>{number}</span>
+                </div>
+
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        {/* OUR VALUES */}
+        <section className="about-values about-section">
+          <div className="about-values-copy">
+            <span className="about-eyebrow">THE THINGS THAT MATTER</span>
+
+            <h2>
+              What we <em>believe.</em>
+            </h2>
+
+            <p>
+              Every great celebration starts with trust. These values guide
+              how we bring customers and event professionals together.
             </p>
 
-            <div className="values-list">
+            <div className="about-values-list">
+              {values.map(({ title, text, Icon }) => (
+                <div className="about-value-item" key={title}>
+                  <span>
+                    <Icon size={18} />
+                  </span>
 
-              <div className="value-item">
-                <div className="value-icon">
-                  <CheckCircle2 size={19} />
+                  <div>
+                    <b>{title}</b>
+                    <small>{text}</small>
+                  </div>
                 </div>
-
-                <div>
-                  <h3>Simplicity</h3>
-                  <p>
-                    Planning should be easy to start and easy to follow.
-                  </p>
-                </div>
-              </div>
-
-              <div className="value-item">
-                <div className="value-icon">
-                  <CheckCircle2 size={19} />
-                </div>
-
-                <div>
-                  <h3>Clarity</h3>
-                  <p>
-                    Clear vendor information helps customers make better
-                    decisions.
-                  </p>
-                </div>
-              </div>
-
-              <div className="value-item">
-                <div className="value-icon">
-                  <CheckCircle2 size={19} />
-                </div>
-
-                <div>
-                  <h3>Fairness</h3>
-                  <p>
-                    Every event professional deserves an opportunity to be
-                    discovered.
-                  </p>
-                </div>
-              </div>
-
-              <div className="value-item">
-                <div className="value-icon">
-                  <CheckCircle2 size={19} />
-                </div>
-
-                <div>
-                  <h3>Every Celebration Matters</h3>
-                  <p>
-                    From intimate family occasions to grand celebrations,
-                    every event deserves care.
-                  </p>
-                </div>
-              </div>
-
+              ))}
             </div>
           </div>
 
-          <div className="values-image-wrap">
+          <div className="about-values-visual">
             <img
               src="/Joyful Indian Wedding Petal Shower.png"
-              alt="Indian wedding celebration"
-              className="values-image"
+              alt="Joyful wedding celebration with flower petals"
             />
 
-            <div className="quote-card">
-              <Quote size={27} />
+            <div className="about-quote">
+              <span>“</span>
 
               <p>
-                "We don't just help plan events. We help people create
-                moments worth remembering."
+                Every celebration has a story. We're here to help you bring
+                yours to life.
               </p>
 
-              <strong>— HarEvent</strong>
+              <small>THE HAREVENT PROMISE</small>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-
-      {/* =========================
-          EVENTS WE COVER
-      ========================= */}
-      <section className="events-section">
-        <div className="about-container">
-
-          <div className="section-heading">
-            <div className="about-eyebrow center">
-              <span></span>
-              EVENTS WE COVER
-              <span></span>
-            </div>
+        {/* EVENTS WE COVER */}
+        <section className="about-events about-section">
+          <div className="about-section-heading centered">
+            <span className="about-eyebrow">
+              LIFE'S BIG AND LITTLE MOMENTS
+            </span>
 
             <h2>
-              One platform for
-              <span> every occasion.</span>
+              One place for <em>every occasion.</em>
             </h2>
 
             <p>
-              Discover services for the moments that matter most.
+              From intimate family gatherings to grand celebrations, discover
+              services for all the moments worth celebrating.
             </p>
           </div>
 
-          <div className="event-grid">
-
-            <div className="event-card">
-              <div className="event-image">
-                <img
-                  src="/Golden Wedding Buffet Under Crystal Lighting.png"
-                  alt="Wedding event"
-                />
-              </div>
-
-              <div className="event-content">
-                <div className="event-icon">
-                  <Heart size={18} />
-                </div>
-
-                <h3>Weddings</h3>
-                <p>
-                  Photography, decoration, catering, venues and more.
-                </p>
-              </div>
-            </div>
-
-            <div className="event-card">
-              <div className="event-image">
-                <img
-                  src="/Joyful Birthday Cake Celebration.png"
-                  alt="Birthday celebration"
-                />
-              </div>
-
-              <div className="event-content">
-                <div className="event-icon">
-                  <Sparkles size={18} />
-                </div>
-
-                <h3>Birthdays</h3>
-                <p>
-                  Make birthdays special with the right event professionals.
-                </p>
-              </div>
-            </div>
-
-            <div className="event-card">
-              <div className="event-image">
-                <img
-                  src="/Corporate Summit Networking Reception.png"
-                  alt="Corporate event"
-                />
-              </div>
-
-              <div className="event-content">
-                <div className="event-icon">
-                  <Users size={18} />
-                </div>
-
-                <h3>Corporate Events</h3>
-                <p>
-                  Professional services for meetings, conferences and more.
-                </p>
-              </div>
-            </div>
-
-            <div className="event-card">
-              <div className="event-image">
-                <img
-                  src="/Elegant Pastel Baby Shower Celebration.png"
-                  alt="Baby shower"
-                />
-              </div>
-
-              <div className="event-content">
-                <div className="event-icon">
-                  <Heart size={18} />
-                </div>
-
-                <h3>Special Occasions</h3>
-                <p>
-                  Baby showers, engagements, anniversaries and celebrations.
-                </p>
-              </div>
-            </div>
-
+          <div className="about-event-chips">
+            {eventTypes.map((event) => (
+              <span key={event}>
+                <Sparkles size={14} />
+                {event}
+              </span>
+            ))}
           </div>
-        </div>
-      </section>
+        </section>
 
+        {/* CALL TO ACTION */}
+        <section className="about-cta">
+          <div className="about-cta-content">
+            <span>LET'S MAKE IT MEMORABLE</span>
 
-      {/* =========================
-          FOR CUSTOMERS / VENDORS
-      ========================= */}
-      <section className="connect-section">
-        <div className="about-container">
+            <h2>Ready to plan your next celebration?</h2>
 
-          <div className="connect-grid">
+            <p>
+              Explore vendors for every occasion, or tell us what you need.
+              Your next great event starts here.
+            </p>
 
-            <div className="connect-card customer-card">
-              <div className="connect-icon">
-                <Users size={25} />
-              </div>
+            <div className="about-cta-actions">
+              <Link to="/event-categories">
+                Explore Event Categories
+                <ArrowRight size={16} />
+              </Link>
 
-              <span>FOR CUSTOMERS</span>
-
-              <h2>
-                Find the right people
-                <br />
-                for your celebration.
-              </h2>
-
-              <p>
-                Explore vendors, compare their work and send enquiries
-                for your upcoming event.
-              </p>
-
-              <Link to="/vendor-categories" className="connect-btn">
+              <Link to="/vendor-categories">
                 Find a Vendor
-                <ArrowRight size={17} />
+                <ArrowRight size={16} />
               </Link>
             </div>
-
-            <div className="connect-card vendor-card">
-              <div className="connect-icon">
-                <Sparkles size={25} />
-              </div>
-
-              <span>FOR VENDORS</span>
-
-              <h2>
-                Put your work in front
-                <br />
-                of more customers.
-              </h2>
-
-              <p>
-                Create your professional profile and reach people looking
-                for event services.
-              </p>
-
-              <Link to="/join-as-vendor" className="connect-btn">
-                Join HarEvent
-                <ArrowRight size={17} />
-              </Link>
-            </div>
-
           </div>
-        </div>
-      </section>
 
-
-      {/* =========================
-          FINAL CTA
-      ========================= */}
-      <section className="about-cta">
-        <div className="about-container">
-
-          <div className="cta-inner">
+          <div className="about-cta-side">
+            <div>
+              <CalendarCheck size={20} />
+              <b>For every occasion</b>
+              <small>Find services that fit your event.</small>
+            </div>
 
             <div>
-              <span>READY TO PLAN?</span>
-
-              <h2>
-                Ready to plan your
-                <br />
-                next celebration?
-              </h2>
-
-              <p>
-                Explore vendors for every occasion, or tell us what
-                you need to make your event memorable.
-              </p>
+              <BadgeCheck size={20} />
+              <b>For every celebration</b>
+              <small>Connect with event professionals.</small>
             </div>
 
-            <div className="cta-buttons">
-
-              <Link
-                to="/event-categories"
-                className="cta-btn white"
-              >
-                Explore Event Categories
-                <ArrowRight size={18} />
-              </Link>
-
-              <Link
-                to="/vendor-categories"
-                className="cta-btn outline"
-              >
-                Find a Vendor
-                <ArrowRight size={18} />
-              </Link>
-
+            <div>
+              <Wallet size={20} />
+              <b>For every plan</b>
+              <small>Enquire and explore your options.</small>
             </div>
-
           </div>
-        </div>
-      </section>
 
+          <div className="about-cta-sparkle">✦</div>
+        </section>
+
+      </main>
+
+      <Footer />
     </div>
   );
-};
+}
 
 export default About;
