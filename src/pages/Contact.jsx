@@ -6,8 +6,6 @@ import {
   CalendarClock,
   ChevronDown,
   ChevronRight,
-  Clock3,
-  Headphones,
   HeartHandshake,
   Mail,
   MapPin,
@@ -28,6 +26,22 @@ const SUPPORT_PHONE = "+91 74481 81396";
 const WHATSAPP_URL = "https://wa.me/917448181396";
 const INSTAGRAM_URL = "https://www.instagram.com/harevent_20/?hl=en";
 const OFFICE_ADDRESS = "Walgaon Road, Amravati, Maharashtra, India";
+
+/* Form typography */
+const fieldLabelStyle = {
+  display: "flex",
+  alignItems: "center",
+  flexWrap: "nowrap",
+  gap: "4px",
+  whiteSpace: "nowrap",
+  fontSize: "15px",
+  lineHeight: "1.4",
+  fontWeight: 600,
+};
+
+const fieldControlStyle = {
+  fontSize: "16px",
+};
 
 const contactOptions = [
   {
@@ -169,91 +183,139 @@ function Contact() {
 
   return (
     <div className="contact-page">
-
       <Navbar />
 
       <main className="contact-main">
 
-        {/* HERO SECTION */}
+        {/* =====================================
+            FULL WIDTH CONTACT HERO BANNER
+        ====================================== */}
 
-        <section className="contact-hero">
+        <section
+          className="contact-hero contact-hero-new"
+          style={{
+            width: "100vw",
+            maxWidth: "none",
+            marginLeft: "calc(50% - 50vw)",
+            marginRight: "calc(50% - 50vw)",
+            borderRadius: "0",
+            backgroundImage: `
+              linear-gradient(
+                rgba(5, 10, 20, 0.42),
+                rgba(5, 10, 20, 0.42)
+              ),
+              url("/Opulent Indian Garden Wedding Mandap.png")
+            `,
+            backgroundSize: "cover",
+            backgroundPosition: "center center",
+            backgroundRepeat: "no-repeat",
+            boxSizing: "border-box",
+          }}
+        >
+          <div
+            className="contact-hero-content"
+            style={{
+              width: "100%",
+              maxWidth: "1500px",
+              margin: "0 auto",
+              boxSizing: "border-box",
+            }}
+          >
 
-          <div className="contact-hero-copy">
-
-            <div className="contact-breadcrumb">
-              <Link to="/">Home</Link>
-              <ChevronRight size={13} />
-              <span>Contact Us</span>
+            <div
+              className="contact-hero-badge"
+              style={{ fontSize: "13px" }}
+            >
+              <span>✦</span>
+              WE'RE HERE TO MAKE YOUR EVENT SPECIAL
             </div>
 
-            <span className="contact-eyebrow">
-              WE'RE HERE FOR YOU
-            </span>
-
-            <h1>
-              Let's talk about
+            <h1
+              style={{
+                fontSize: "clamp(42px, 5vw, 76px)",
+                lineHeight: "1.12",
+              }}
+            >
+              Let's Talk About Your
               <br />
-              <em>your next event.</em>
+              <span>Perfect Event.</span>
             </h1>
 
-            <h2>We are here to help.</h2>
-
-            <p>
-              Whether you are planning an event or running an event
-              business, tell us how we can help. Choose the option
-              that suits you best and we will point you to the right person.
+            <p
+              className="contact-hero-description"
+              style={{
+                fontSize: "18px",
+                lineHeight: "1.6",
+              }}
+            >
+              Have questions, need assistance or looking for the perfect event
+              vendors? Connect with HarEvent and let's make your special moments
+              unforgettable.
             </p>
 
-            <div className="contact-hero-points">
+            <div className="contact-hero-searchbar">
 
-              <span>
-                <Headphones size={18} />
-                <b>Friendly support</b>
-              </span>
-
-              <span>
-                <ShieldCheck size={18} />
-                <b>Here to help</b>
-              </span>
-
-              <span>
-                <Clock3 size={18} />
-                <b>Mon – Fri, 10 to 6</b>
-              </span>
-
-            </div>
-
-          </div>
-
-          <div className="contact-hero-visual">
-
-            <img
-              src="/Opulent Indian Garden Wedding Mandap.png"
-              alt="Beautifully decorated wedding venue"
-            />
-
-            <div className="contact-hero-assist">
-
-              <span className="contact-assist-icon">
-                <Phone size={21} fill="currentColor" />
-              </span>
-
-              <div>
-                <small>NEED QUICK ASSISTANCE?</small>
-
-                <a href="tel:+917448181396">
-                  +91 74481 81396
-                </a>
-
+              <a
+                href="tel:+917448181396"
+                className="contact-hero-action"
+              >
+                <Phone size={20} />
                 <span>
-                  Call or WhatsApp – we're happy to help!
+                  <small style={{ fontSize: "11px" }}>
+                    CALL OUR TEAM
+                  </small>
+                  <strong style={{ fontSize: "15px" }}>
+                    {SUPPORT_PHONE}
+                  </strong>
                 </span>
-              </div>
+              </a>
+
+              <a
+                href={`mailto:${SUPPORT_EMAIL}`}
+                className="contact-hero-action"
+              >
+                <Mail size={20} />
+                <span>
+                  <small style={{ fontSize: "11px" }}>
+                    EMAIL SUPPORT
+                  </small>
+                  <strong style={{ fontSize: "15px" }}>
+                    Send us an email
+                  </strong>
+                </span>
+              </a>
+
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Walgaon+Road+Amravati+Maharashtra+India"
+                target="_blank"
+                rel="noreferrer"
+                className="contact-hero-action"
+              >
+                <MapPin size={20} />
+                <span>
+                  <small style={{ fontSize: "11px" }}>
+                    OUR LOCATION
+                  </small>
+                  <strong style={{ fontSize: "15px" }}>
+                    Amravati, Maharashtra
+                  </strong>
+                </span>
+              </a>
+
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="contact-hero-search-btn"
+                style={{ fontSize: "15px" }}
+              >
+                <MessageCircle size={19} />
+                Chat With Us
+                <ArrowRight size={18} />
+              </a>
 
             </div>
-
           </div>
-
         </section>
 
         {/* THREE WAYS TO CONTACT */}
@@ -261,7 +323,6 @@ function Contact() {
         <section className="contact-methods contact-section">
 
           <div className="contact-section-heading">
-
             <span className="contact-eyebrow">
               GET IN TOUCH
             </span>
@@ -273,19 +334,15 @@ function Contact() {
             <p>
               Choose the support that best matches what you need.
             </p>
-
           </div>
 
           <div className="contact-method-grid">
-
             {contactOptions.map(
               ({ eyebrow, title, description, Icon, links }) => (
-
                 <article
                   className="contact-method-card"
                   key={eyebrow}
                 >
-
                   <span className="contact-method-icon">
                     <Icon size={22} />
                   </span>
@@ -299,10 +356,8 @@ function Contact() {
                   <p>{description}</p>
 
                   <div className="contact-method-links">
-
                     {links.map(
                       ({ label, href, Icon: LinkIcon, external }) => (
-
                         <a
                           key={label}
                           href={href}
@@ -319,31 +374,22 @@ function Contact() {
                           <span>{label}</span>
                           <ChevronRight size={14} />
                         </a>
-
                       )
                     )}
-
                   </div>
-
                 </article>
-
               )
             )}
-
           </div>
-
         </section>
 
         {/* CONTACT FORM AND CONTACT INFORMATION */}
 
         <section className="contact-main-grid contact-section">
 
-          {/* CONTACT FORM */}
-
           <div className="contact-form-panel">
 
             <div className="contact-panel-heading">
-
               <span className="contact-eyebrow">
                 WRITE TO US
               </span>
@@ -356,7 +402,6 @@ function Contact() {
                 Fill in the form and our team will get back to you
                 during working hours.
               </p>
-
             </div>
 
             <form
@@ -365,11 +410,13 @@ function Contact() {
             >
 
               <div className="contact-form-row">
-
                 <label>
-                  Full name <span>*</span>
+                  <span style={fieldLabelStyle}>
+                    Full name <span>*</span>
+                  </span>
 
                   <input
+                    style={fieldControlStyle}
                     name="name"
                     value={form.name}
                     onChange={updateField}
@@ -380,9 +427,12 @@ function Contact() {
                 </label>
 
                 <label>
-                  Email address <span>*</span>
+                  <span style={fieldLabelStyle}>
+                    Email address <span>*</span>
+                  </span>
 
                   <input
+                    style={fieldControlStyle}
                     type="email"
                     name="email"
                     value={form.email}
@@ -392,15 +442,25 @@ function Contact() {
                     required
                   />
                 </label>
-
               </div>
 
               <div className="contact-form-row">
-
                 <label>
-                  Phone number <small>(optional)</small>
+                  <span style={fieldLabelStyle}>
+                    Phone number
+                    <small
+                      style={{
+                        fontSize: "14px",
+                        fontWeight: 400,
+                        color: "#8b7b89",
+                      }}
+                    >
+                      (optional)
+                    </small>
+                  </span>
 
                   <input
+                    style={fieldControlStyle}
                     type="tel"
                     name="phone"
                     value={form.phone}
@@ -411,9 +471,12 @@ function Contact() {
                 </label>
 
                 <label>
-                  I am a <span>*</span>
+                  <span style={fieldLabelStyle}>
+                    I am a <span>*</span>
+                  </span>
 
                   <select
+                    style={fieldControlStyle}
                     name="role"
                     value={form.role}
                     onChange={updateField}
@@ -424,13 +487,15 @@ function Contact() {
                     <option>Other</option>
                   </select>
                 </label>
-
               </div>
 
               <label>
-                Subject <span>*</span>
+                <span style={fieldLabelStyle}>
+                  Subject <span>*</span>
+                </span>
 
                 <select
+                  style={fieldControlStyle}
                   name="subject"
                   value={form.subject}
                   onChange={updateField}
@@ -446,9 +511,12 @@ function Contact() {
               </label>
 
               <label>
-                Your message <span>*</span>
+                <span style={fieldLabelStyle}>
+                  Your message <span>*</span>
+                </span>
 
                 <textarea
+                  style={fieldControlStyle}
                   name="message"
                   value={form.message}
                   onChange={updateField}
@@ -459,7 +527,6 @@ function Contact() {
               </label>
 
               <label className="contact-privacy-check">
-
                 <input
                   type="checkbox"
                   name="privacy"
@@ -474,7 +541,6 @@ function Contact() {
                     Privacy Policy
                   </Link>.
                 </span>
-
               </label>
 
               {notice && (
@@ -491,16 +557,15 @@ function Contact() {
                 type="submit"
               >
                 Prepare Message
-                <Send size={16} />
+                <Send size={18} />
               </button>
 
               <p className="contact-form-footnote">
-                <ShieldCheck size={13} />
+                <ShieldCheck size={15} />
                 Your details are used only to respond to your enquiry.
               </p>
 
             </form>
-
           </div>
 
           {/* CONTACT DETAILS */}
@@ -508,7 +573,6 @@ function Contact() {
           <aside className="contact-info-panel">
 
             <div className="contact-panel-heading">
-
               <span className="contact-eyebrow">
                 WE'D LOVE TO HEAR FROM YOU
               </span>
@@ -520,13 +584,11 @@ function Contact() {
               <p>
                 Here's how you can reach the HarEvent team.
               </p>
-
             </div>
 
             <div className="contact-info-list">
 
               <div className="contact-info-item">
-
                 <span className="contact-info-icon">
                   <MapPin size={21} />
                 </span>
@@ -544,11 +606,9 @@ function Contact() {
                     Get directions <ArrowRight size={13} />
                   </a>
                 </div>
-
               </div>
 
               <div className="contact-info-item">
-
                 <span className="contact-info-icon">
                   <Mail size={21} />
                 </span>
@@ -564,11 +624,9 @@ function Contact() {
                     For customer, vendor and general enquiries
                   </small>
                 </div>
-
               </div>
 
               <div className="contact-info-item">
-
                 <span className="contact-info-icon">
                   <Phone size={21} />
                 </span>
@@ -588,11 +646,9 @@ function Contact() {
                     Message us on WhatsApp <ArrowRight size={13} />
                   </a>
                 </div>
-
               </div>
 
               <div className="contact-info-item">
-
                 <span className="contact-info-icon">
                   <CalendarClock size={21} />
                 </span>
@@ -606,13 +662,11 @@ function Contact() {
                     Closed on Saturday and Sunday
                   </small>
                 </div>
-
               </div>
 
             </div>
 
             <div className="contact-social-card">
-
               <div>
                 <b>Stay connected</b>
                 <span>
@@ -628,11 +682,9 @@ function Contact() {
               >
                 Instagram <ArrowRight size={14} />
               </a>
-
             </div>
 
           </aside>
-
         </section>
 
         {/* OFFICE MAP AND IMAGE */}
@@ -640,7 +692,6 @@ function Contact() {
         <section className="contact-location-grid contact-section">
 
           <div className="contact-map-card">
-
             <iframe
               title="Map showing Walgaon Road, Amravati"
               src="https://www.google.com/maps?q=Walgaon+Road%2C+Amravati%2C+Maharashtra%2C+India&output=embed"
@@ -650,7 +701,6 @@ function Contact() {
             />
 
             <div className="contact-map-label">
-
               <span className="contact-info-icon">
                 <MapPin size={20} />
               </span>
@@ -667,20 +717,16 @@ function Contact() {
               >
                 Directions <ArrowRight size={13} />
               </a>
-
             </div>
-
           </div>
 
           <div className="contact-office-photo">
-
             <img
               src="/Luxurious Ivory Floral Wedding Stage.png"
               alt="Elegant event venue prepared for a celebration"
             />
 
             <div className="contact-office-overlay">
-
               <span>
                 <HeartHandshake size={20} />
               </span>
@@ -691,11 +737,8 @@ function Contact() {
                   Let's build something amazing together.
                 </small>
               </div>
-
             </div>
-
           </div>
-
         </section>
 
         {/* QUICK HELP */}
@@ -703,7 +746,6 @@ function Contact() {
         <section className="contact-quick-help contact-section">
 
           <div className="contact-quick-copy">
-
             <span className="contact-eyebrow">
               NEED A HAND?
             </span>
@@ -716,13 +758,11 @@ function Contact() {
               Find the right place to start. We're here to make
               your next step easier.
             </p>
-
           </div>
 
           <div className="contact-quick-links">
 
             <Link to="/event-categories">
-
               <span>
                 <CalendarClock size={19} />
               </span>
@@ -735,7 +775,6 @@ function Contact() {
               </div>
 
               <ChevronRight size={17} />
-
             </Link>
 
             <a
@@ -743,7 +782,6 @@ function Contact() {
               target="_blank"
               rel="noreferrer"
             >
-
               <span>
                 <MessageCircle size={19} />
               </span>
@@ -756,7 +794,6 @@ function Contact() {
               </div>
 
               <ChevronRight size={17} />
-
             </a>
 
             <a
@@ -764,7 +801,6 @@ function Contact() {
                 "HarEvent grievance / complaint"
               )}`}
             >
-
               <span>
                 <ShieldCheck size={19} />
               </span>
@@ -777,11 +813,9 @@ function Contact() {
               </div>
 
               <ChevronRight size={17} />
-
             </a>
 
           </div>
-
         </section>
 
         {/* CONTACT FAQs */}
@@ -789,7 +823,6 @@ function Contact() {
         <section className="contact-faq contact-section">
 
           <div className="contact-section-heading centered">
-
             <span className="contact-eyebrow">
               QUICK ANSWERS
             </span>
@@ -801,31 +834,23 @@ function Contact() {
             <p>
               A few helpful answers before you get in touch.
             </p>
-
           </div>
 
           <div className="contact-faq-list">
-
             {faqs.map(({ question, answer }) => (
-
               <details
                 className="contact-faq-item"
                 key={question}
               >
-
                 <summary>
                   {question}
                   <ChevronDown size={18} />
                 </summary>
 
                 <p>{answer}</p>
-
               </details>
-
             ))}
-
           </div>
-
         </section>
 
         {/* FINAL CTA */}
@@ -861,10 +886,7 @@ function Contact() {
 
       </main>
 
-      {/* EXISTING HAREVENT FOOTER */}
-
       <Footer />
-
     </div>
   );
 }
