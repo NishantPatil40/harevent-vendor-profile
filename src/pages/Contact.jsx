@@ -191,132 +191,116 @@ function Contact() {
             FULL WIDTH CONTACT HERO BANNER
         ====================================== */}
 
-        <section
-          className="contact-hero contact-hero-new"
-          style={{
-            width: "100vw",
-            maxWidth: "none",
-            marginLeft: "calc(50% - 50vw)",
-            marginRight: "calc(50% - 50vw)",
-            borderRadius: "0",
-            backgroundImage: `
-              linear-gradient(
-                rgba(5, 10, 20, 0.42),
-                rgba(5, 10, 20, 0.42)
-              ),
-              url("/Opulent Indian Garden Wedding Mandap.png")
-            `,
-            backgroundSize: "cover",
-            backgroundPosition: "center center",
-            backgroundRepeat: "no-repeat",
-            boxSizing: "border-box",
-          }}
-        >
-          <div
-            className="contact-hero-content"
-            style={{
-              width: "100%",
-              maxWidth: "1500px",
-              margin: "0 auto",
-              boxSizing: "border-box",
-            }}
-          >
+       
+{/* =====================================
+    CONTACT HERO - ABOUT PAGE DESIGN
+====================================== */}
 
-            <div
-              className="contact-hero-badge"
-              style={{ fontSize: "13px" }}
-            >
-              <span>✦</span>
-              WE'RE HERE TO MAKE YOUR EVENT SPECIAL
+
+{/* CONTACT HERO - PREMIUM ABOUT PAGE DESIGN */}
+
+{/* =====================================
+    CONTACT HERO - PREMIUM ABOUT PAGE DESIGN
+====================================== */}
+
+
+ <section className="contact-hero-about">
+        <div className="contact-hero-about-content">
+
+          {/* LEFT CONTENT */}
+          <div className="contact-hero-about-text">
+
+            <div className="contact-hero-breadcrumb">
+              <Link to="/">Home</Link>
+              <ChevronRight size={15} />
+              <span>Contact Us</span>
             </div>
 
-            <h1
-              style={{
-                fontSize: "clamp(42px, 5vw, 76px)",
-                lineHeight: "1.12",
-              }}
-            >
-              Let's Talk About Your
+            <span className="contact-hero-about-eyebrow">
+              <span className="contact-hero-about-line" />
+              WE'RE HERE TO HELP
+            </span>
+
+            <h1>
+              Let's Talk About
               <br />
-              <span>Perfect Event.</span>
+              Your <span>Perfect Event.</span>
             </h1>
 
-            <p
-              className="contact-hero-description"
-              style={{
-                fontSize: "18px",
-                lineHeight: "1.6",
-              }}
-            >
-              Have questions, need assistance or looking for the perfect event
-              vendors? Connect with HarEvent and let's make your special moments
-              unforgettable.
+            <h2>Everything for Every Event.</h2>
+
+            <p>
+              Have questions, need assistance or looking for the
+              perfect event vendors? Connect with HarEvent and
+              let's make your special moments unforgettable.
             </p>
 
-            <div className="contact-hero-searchbar">
-
-              <a
-                href="tel:+917448181396"
-                className="contact-hero-action"
-              >
-                <Phone size={20} />
-                <span>
-                  <small style={{ fontSize: "11px" }}>
-                    CALL OUR TEAM
-                  </small>
-                  <strong style={{ fontSize: "15px" }}>
-                    {SUPPORT_PHONE}
-                  </strong>
-                </span>
-              </a>
-
-              <a
-                href={`mailto:${SUPPORT_EMAIL}`}
-                className="contact-hero-action"
-              >
-                <Mail size={20} />
-                <span>
-                  <small style={{ fontSize: "11px" }}>
-                    EMAIL SUPPORT
-                  </small>
-                  <strong style={{ fontSize: "15px" }}>
-                    Send us an email
-                  </strong>
-                </span>
-              </a>
-
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=Walgaon+Road+Amravati+Maharashtra+India"
-                target="_blank"
-                rel="noreferrer"
-                className="contact-hero-action"
-              >
-                <MapPin size={20} />
-                <span>
-                  <small style={{ fontSize: "11px" }}>
-                    OUR LOCATION
-                  </small>
-                  <strong style={{ fontSize: "15px" }}>
-                    Amravati, Maharashtra
-                  </strong>
-                </span>
-              </a>
-
+            <div className="contact-hero-about-buttons">
               <a
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="contact-hero-search-btn"
-                style={{ fontSize: "15px" }}
+                className="contact-hero-about-primary"
               >
-                <MessageCircle size={19} />
                 Chat With Us
                 <ArrowRight size={18} />
               </a>
 
+              <a
+                href={`mailto:${SUPPORT_EMAIL}`}
+                className="contact-hero-about-secondary"
+              >
+                <Mail size={17} />
+                Send an Email
+              </a>
+            </div>
+
+            <div className="contact-hero-about-features">
+              <div>
+                <ShieldCheck size={18} />
+                <span>One place to discover</span>
+              </div>
+              <div>
+                <HeartHandshake size={18} />
+                <span>Every celebration matters</span>
+              </div>
             </div>
           </div>
-        </section>
+
+          {/* RIGHT IMAGE */}
+          <div className="contact-hero-about-image">
+            <img
+              className="contact-hero-about-main-image"
+              src="/Opulent Indian Garden Wedding Mandap.png"
+              alt="Beautiful wedding venue decorated for a special celebration"
+            />
+
+            <div className="contact-hero-about-floating-card">
+              <div className="contact-hero-about-floating-icon">
+                <Phone size={22} />
+              </div>
+
+              <div>
+                <span>LET'S PLAN TOGETHER</span>
+                <a href={`tel:${SUPPORT_PHONE.replace(/\s/g, "")}`}>
+                  {SUPPORT_PHONE}
+                </a>
+                <small>We're just a call away!</small>
+              </div>
+
+              <a
+                href={`tel:${SUPPORT_PHONE.replace(/\s/g, "")}`}
+                className="contact-hero-about-floating-arrow"
+                aria-label="Call HarEvent"
+              >
+                <ArrowRight size={20} />
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
 
         {/* THREE WAYS TO CONTACT */}
 
