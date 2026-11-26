@@ -17,6 +17,7 @@ import NotFound from "./pages/NotFound";
 import Search from "./pages/Search";
 import VendorCategories from "./pages/VendorCategories";
 import VendorProfile from "./pages/VendorProfile";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/enquiry" element={<Enquiry />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             
             <Route
               path="/vendor-login"
