@@ -18,6 +18,7 @@ import Search from "./pages/Search";
 import VendorCategories from "./pages/VendorCategories";
 import VendorProfile from "./pages/VendorProfile";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsAndConditions from "./pages/TermsAndConditions";
 
 
 function App() {
@@ -41,6 +42,8 @@ function App() {
             <Route path="/enquiry" element={<Enquiry />} />
             <Route path="/login" element={<Login />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms" element={<TermsAndConditions />} />
+            <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
             
             <Route
               path="/vendor-login"

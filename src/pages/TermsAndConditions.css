@@ -1,0 +1,158 @@
+/* =========================================
+   HAREVENT TERMS & CONDITIONS PAGE
+   Simple, full-width document layout.
+   Fonts and colours follow the HarEvent site.
+   Headings = 16px, description text = 14px
+========================================= */
+
+.terms-page {
+  --tc-pink: #e91e63;
+  --tc-orange: #ff7138;
+  --tc-ink: #291b32;
+  --tc-muted: #67566a;
+  --tc-gradient: linear-gradient(100deg, #e91e63, #ff7138);
+  --tc-side: 5%;
+
+  /* Change these two values to resize the whole page */
+  --tc-heading-size: 16px;
+  --tc-text-size: 14px;
+
+  width: 100%;
+  color: var(--tc-ink);
+  background: #fff;
+  font-family: Poppins, sans-serif;
+}
+
+.terms-page *,
+.terms-page *::before,
+.terms-page *::after {
+  box-sizing: border-box;
+}
+
+.terms-main {
+  width: 100%;
+  margin: 0;
+  padding: 40px var(--tc-side) 60px;
+}
+
+/* =========================================
+   HEADING
+========================================= */
+
+.terms-title {
+  width: fit-content;
+  margin: 0 auto 12px;
+  text-align: center;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: clamp(32px, 3.2vw, 48px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.8px;
+  background: var(--tc-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* =========================================
+   POLICY TEXT
+========================================= */
+
+.terms-layout {
+  display: block;
+  width: 100%;
+  padding: 24px 0 0;
+}
+
+.terms-content {
+  width: 100%;
+  max-width: 100%;
+}
+
+.terms-block {
+  margin-bottom: 26px;
+  scroll-margin-top: 100px;
+}
+
+.terms-block:last-child {
+  margin-bottom: 0;
+}
+
+.terms-block h2 {
+  margin: 0 0 8px;
+  color: var(--tc-ink);
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: var(--tc-heading-size);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.terms-block p {
+  margin: 0 0 10px;
+  color: var(--tc-muted);
+  font-size: var(--tc-text-size);
+  line-height: 1.9;
+}
+
+.terms-block p:last-child {
+  margin-bottom: 0;
+}
+
+.terms-block ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 0 10px;
+  padding: 0;
+  list-style: none;
+}
+
+.terms-block li {
+  position: relative;
+  padding-left: 24px;
+  color: var(--tc-muted);
+  font-size: var(--tc-text-size);
+  line-height: 1.8;
+}
+
+.terms-block li::before {
+  position: absolute;
+  top: 10px;
+  left: 6px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--tc-pink);
+  content: "";
+}
+
+.terms-block strong {
+  color: var(--tc-ink);
+  font-weight: 600;
+}
+
+/* Placeholders you still need to fill in */
+.terms-confirm {
+  padding: 1px 6px;
+  border-radius: 5px;
+  background: #fff1c9;
+  color: #7a5200;
+  font-weight: 500;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+  .terms-page {
+    --tc-side: 24px;
+  }
+}
+
+@media (max-width: 680px) {
+  .terms-page {
+    --tc-side: 16px;
+  }
+}

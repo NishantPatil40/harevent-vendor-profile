@@ -1,11 +1,6 @@
-import { Link } from "react-router-dom";
-import { ChevronRight, Mail, ShieldCheck } from "lucide-react";
-
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "./PrivacyPolicy.css";
-
-const SUPPORT_EMAIL = "harevent2020@gmail.com";
 
 /* =========================================
    POLICY CONTENT
@@ -287,51 +282,9 @@ function PrivacyPolicy() {
       <Navbar />
 
       <main className="privacy-main">
-        {/* =====================================
-            HERO
-        ====================================== */}
-        <section className="privacy-hero">
-          <div className="privacy-breadcrumb">
-            <Link to="/">Home</Link>
-            <ChevronRight size={15} />
-            <span>Privacy Policy</span>
-          </div>
+        {/* Simple heading */}
+        <h1 className="privacy-title">Privacy Policy</h1>
 
-          <span className="privacy-eyebrow">
-            <span className="privacy-eyebrow-line" />
-            YOUR PRIVACY MATTERS
-          </span>
-
-          <h1>
-            Privacy <span>Policy</span>
-          </h1>
-
-          <h2>How HarEvent handles your information.</h2>
-
-          <p>
-            We keep this policy simple. Here you can see what we collect,
-            why we collect it, who we share it with and the choices you
-            have.
-          </p>
-
-          <div className="privacy-hero-meta">
-            <div>
-              <ShieldCheck size={18} />
-              <span>
-                Last updated:{" "}
-                <mark className="privacy-confirm">[CONFIRM: date]</mark>
-              </span>
-            </div>
-            <div>
-              <Mail size={18} />
-              <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>
-            </div>
-          </div>
-        </section>
-
-        {/* =====================================
-            POLICY TEXT
-        ====================================== */}
         <section className="privacy-layout">
         <article className="privacy-content">
           {policySections.map((section) => (
