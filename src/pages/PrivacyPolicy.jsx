@@ -1,11 +1,5 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  ArrowRight,
-  ChevronRight,
-  Mail,
-  ShieldCheck,
-} from "lucide-react";
+import { ChevronRight, Mail, ShieldCheck } from "lucide-react";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -27,7 +21,7 @@ const SUPPORT_EMAIL = "harevent2020@gmail.com";
 const policySections = [
   {
     id: "about",
-    title: "About this policy",
+    title: "About This Policy",
     blocks: [
       {
         type: "p",
@@ -41,7 +35,7 @@ const policySections = [
   },
   {
     id: "who-it-covers",
-    title: "Who this policy covers",
+    title: "Who This Policy Covers",
     blocks: [
       {
         type: "p",
@@ -51,7 +45,7 @@ const policySections = [
   },
   {
     id: "information-we-collect",
-    title: "Information we collect",
+    title: "Information We Collect",
     blocks: [
       {
         type: "lead",
@@ -74,7 +68,7 @@ const policySections = [
   },
   {
     id: "how-we-use",
-    title: "How we use your information",
+    title: "How We Use Your Information",
     blocks: [
       { type: "p", text: "We use your information to:" },
       {
@@ -96,7 +90,7 @@ const policySections = [
   },
   {
     id: "consent",
-    title: "Your consent",
+    title: "Your Consent",
     blocks: [
       {
         type: "p",
@@ -106,7 +100,7 @@ const policySections = [
   },
   {
     id: "sharing",
-    title: "Who we share information with",
+    title: "Who We Share Information With",
     blocks: [
       {
         type: "lead",
@@ -137,7 +131,7 @@ const policySections = [
   },
   {
     id: "public-content",
-    title: "Messages, reviews and public content",
+    title: "Messages, Reviews And Public Content",
     blocks: [
       {
         type: "p",
@@ -157,7 +151,7 @@ const policySections = [
   },
   {
     id: "retention",
-    title: "How long we keep information",
+    title: "How Long We Keep Information",
     blocks: [
       {
         type: "p",
@@ -167,7 +161,7 @@ const policySections = [
   },
   {
     id: "security",
-    title: "How we protect information",
+    title: "How We Protect Information",
     blocks: [
       {
         type: "p",
@@ -177,7 +171,7 @@ const policySections = [
   },
   {
     id: "your-rights",
-    title: "Your rights",
+    title: "Your Rights",
     blocks: [
       { type: "p", text: "You can ask us to:" },
       {
@@ -199,7 +193,7 @@ const policySections = [
   },
   {
     id: "marketing",
-    title: "Marketing and WhatsApp messages",
+    title: "Marketing And WhatsApp Messages",
     blocks: [
       {
         type: "p",
@@ -219,7 +213,7 @@ const policySections = [
   },
   {
     id: "other-sites",
-    title: "Links to other sites",
+    title: "Links To Other Sites",
     blocks: [
       {
         type: "p",
@@ -229,7 +223,7 @@ const policySections = [
   },
   {
     id: "outside-india",
-    title: "Storage outside India",
+    title: "Storage Outside India",
     blocks: [
       {
         type: "p",
@@ -239,7 +233,7 @@ const policySections = [
   },
   {
     id: "changes",
-    title: "Changes to this policy",
+    title: "Changes To This Policy",
     blocks: [
       {
         type: "p",
@@ -249,7 +243,7 @@ const policySections = [
   },
   {
     id: "grievance",
-    title: "Grievance Officer and contact",
+    title: "Grievance Officer And Contact",
     blocks: [
       {
         type: "p",
@@ -288,28 +282,6 @@ function renderText(text) {
 }
 
 function PrivacyPolicy() {
-  const [activeId, setActiveId] = useState(policySections[0].id);
-
-  /* Highlight the section currently in view in the contents list */
-  useEffect(() => {
-    const headings = policySections
-      .map((section) => document.getElementById(section.id))
-      .filter(Boolean);
-
-    if (!("IntersectionObserver" in window)) return undefined;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries.find((entry) => entry.isIntersecting);
-        if (visible) setActiveId(visible.target.id);
-      },
-      { rootMargin: "-20% 0px -70% 0px" }
-    );
-
-    headings.forEach((heading) => observer.observe(heading));
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <div className="privacy-page">
       <Navbar />
@@ -346,7 +318,8 @@ function PrivacyPolicy() {
             <div>
               <ShieldCheck size={18} />
               <span>
-                Last updated: <mark className="privacy-confirm">[CONFIRM: date]</mark>
+                Last updated:{" "}
+                <mark className="privacy-confirm">[CONFIRM: date]</mark>
               </span>
             </div>
             <div>
@@ -357,84 +330,46 @@ function PrivacyPolicy() {
         </section>
 
         {/* =====================================
-            CONTENTS + POLICY TEXT
+            POLICY TEXT
         ====================================== */}
         <section className="privacy-layout">
-          <aside className="privacy-toc" aria-label="Policy contents">
-            <span className="privacy-toc-title">CONTENTS</span>
+        <article className="privacy-content">
+          {policySections.map((section) => (
+            <section
+              className="privacy-block"
+              id={section.id}
+              key={section.id}
+            >
+              <h2>{section.title}</h2>
 
-            <ol>
-              {policySections.map((section) => (
-                <li key={section.id}>
-                  <a
-                    href={`#${section.id}`}
-                    className={activeId === section.id ? "active" : ""}
-                  >
-                    {section.title}
-                  </a>
-                </li>
-              ))}
-            </ol>
-          </aside>
+              {section.blocks.map((block, blockIndex) => {
+                if (block.type === "p") {
+                  return <p key={blockIndex}>{renderText(block.text)}</p>;
+                }
 
-          <article className="privacy-content">
-            {policySections.map((section, index) => (
-              <section
-                className="privacy-block"
-                id={section.id}
-                key={section.id}
-              >
-                <h2>
-                  <span className="privacy-block-number">{index + 1}</span>
-                  {section.title}
-                </h2>
-
-                {section.blocks.map((block, blockIndex) => {
-                  if (block.type === "p") {
-                    return <p key={blockIndex}>{renderText(block.text)}</p>;
-                  }
-
-                  if (block.type === "ul") {
-                    return (
-                      <ul key={blockIndex}>
-                        {block.items.map((item) => (
-                          <li key={item}>{renderText(item)}</li>
-                        ))}
-                      </ul>
-                    );
-                  }
-
+                if (block.type === "ul") {
                   return (
                     <ul key={blockIndex}>
                       {block.items.map((item) => (
-                        <li key={item.lead}>
-                          <strong>{item.lead}</strong> {renderText(item.text)}
-                        </li>
+                        <li key={item}>{renderText(item)}</li>
                       ))}
                     </ul>
                   );
-                })}
-              </section>
-            ))}
-          </article>
-        </section>
+                }
 
-        {/* =====================================
-            BOTTOM CTA
-        ====================================== */}
-        <section className="privacy-cta">
-          <div>
-            <h2>Questions about your privacy?</h2>
-            <p>
-              Write to us and our team will help you with any request about
-              your information.
-            </p>
-          </div>
-
-          <Link to="/contact">
-            Contact Us
-            <ArrowRight size={16} />
-          </Link>
+                return (
+                  <ul key={blockIndex}>
+                    {block.items.map((item) => (
+                      <li key={item.lead}>
+                        <strong>{item.lead}</strong> {renderText(item.text)}
+                      </li>
+                    ))}
+                  </ul>
+                );
+              })}
+            </section>
+          ))}
+        </article>
         </section>
       </main>
 
